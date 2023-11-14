@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Rubik:wght@400;500&display=swap');
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -20,19 +27,43 @@ main{
 .section-info-header{
     grid-column: 1 / 2;
     display: flex;
+    align-items: start;
+}
+.section-info-header img{
+    width: 100px;
+    object-fit: contain;
+    margin-top: 10px;
 }
 .section-info-header p{
-    margin: 20px 50px 0 0;
+    margin: 20px 0 0 50px;
 }
 .section-info-about{
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    padding: 40px 0 0 0;
+    padding: 40px 80px 0 0;
+    text-align: justify;
+}
+.section-info-about h1{
+    font-size: 40px;
+    color: #fbd42c;
+}
+.section-info-about .username{
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #472110;
+    font-weight: 500;
 }
 .section-info-img{
     grid-column: 2 / 3;
     grid-row: 1 / 3;
 }
+.section-info-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(90px 0, 100% 0, 100% 100%, 0 100%);
+}
+
 
 /*Section videos*/
 .section-videos{
@@ -41,16 +72,17 @@ main{
     grid-row: 1fr 1fr;
     justify-content: start;
 }
-.section-videos p{
-    margin: 20px 0 10px 0;
+.section-videos .title{
+    margin: 10px 0 10px 0;
+    font-weight: 500;
 }
 .section-videos-content{
     width: 1200px;
     display: flex;
 }
-.section-videos-content .videos{
-    width: 275px;
-    height: 200px;
+.section-videos-content .video{
+    width: 285px;
+    height: 185px;
     border: solid 1px black;
     margin-right: 20px;
 }
