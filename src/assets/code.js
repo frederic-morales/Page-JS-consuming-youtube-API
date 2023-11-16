@@ -1,5 +1,7 @@
 const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCpVm7bg6pXKo1Pr6k5kxG9A&part=snippet%2Cid&order=date&maxResults=10';
 
+const content = null || document.getElementById('content')
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -26,8 +28,20 @@ async function fetchData(urlApi){
 (async () => {
     try{
         const videos = await fetchData(API);
-        
-    } catch{
-
+        let view = `
+		${videos.items.map(video => `
+			<div class="section-videos-content">
+			<div class="video">
+			<a href="https://youtube.com/watch?v=${video.id.videoId}">
+				<img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}">
+				<p>${video.snippet.title}</p>
+			</a>
+			</div>
+			</div>
+		`).slice(0,8).join('')}
+		`
+		content.innerHTML = view
+    } catch (error){
+		console.log(error)
     }
 })();
